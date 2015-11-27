@@ -1,6 +1,10 @@
 import Backbone from 'backbone';
 var itemTemplate = require('../templates/item.jade');
 
+const ENTER_KEY = 13;
+const ESC_KEY = 27;
+const TodoFilter = 'completed';
+
 // The DOM element for a todo item...
 var TodoView = Backbone.View.extend({
 	//... is a list tag.
@@ -55,8 +59,8 @@ var TodoView = Backbone.View.extend({
 
 	isHidden: function () {
 		return this.model.get('completed') ?
-			app.TodoFilter === 'active' :
-			app.TodoFilter === 'completed';
+			TodoFilter === 'active' :
+			TodoFilter === 'completed';
 	},
 
 	// Toggle the `"completed"` state of the model.
@@ -114,3 +118,5 @@ var TodoView = Backbone.View.extend({
 		this.model.destroy();
 	}
 });
+
+export default TodoView;

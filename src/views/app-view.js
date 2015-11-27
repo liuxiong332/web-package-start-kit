@@ -4,6 +4,8 @@ import TodoView from './todo-view';
 import _ from 'underscore';
 var statsTemplate = require('../templates/stats.jade');
 
+const ENTER_KEY = 13;
+
 // Our overall **AppView** is the top-level piece of UI.
 var AppView = Backbone.View.extend({
 
@@ -60,7 +62,7 @@ var AppView = Backbone.View.extend({
 
 			this.$('.filters li a')
 				.removeClass('selected')
-				.filter('[href="#/' + (app.TodoFilter || '') + '"]')
+				.filter('[href="#/' + (TodoFilter || '') + '"]')
 				.addClass('selected');
 		} else {
 			this.$main.hide();
@@ -73,6 +75,7 @@ var AppView = Backbone.View.extend({
 	// Add a single todo item to the list by creating a view for it, and
 	// appending its element to the `<ul>`.
 	addOne: function (todo) {
+    console.log(todo);
 		var view = new TodoView({ model: todo });
 		this.$list.append(view.render().el);
 	},
