@@ -66,13 +66,6 @@ module.exports = function(config) {
 
     browsers: [ isCI ? 'ChromeTravisCI' : devBrowser ],
 
-    customLaunchers: {
-      ChromeTravisCI: {
-        base: 'Chrome',
-        flags: ['--no-sandbox']
-      }
-    },
-
     captureTimeout: 60000,
     browserNoActivityTimeout: 45000,
 

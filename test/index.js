@@ -1,9 +1,5 @@
-import 'es5-shim';
-var classNameUtils = require('../src/utils/classNameUtils');
-
 beforeEach(() => {
   sinon.stub(console, 'error');
-  sinon.stub(classNameUtils, 'mapClassNames', (styles, classNames) => classNames);
 });
 
 afterEach(function checkNoUnexpectedWarnings() {
@@ -13,7 +9,6 @@ afterEach(function checkNoUnexpectedWarnings() {
     });
     console.error.restore();
   }
-  classNameUtils.mapClassNames.restore();
 });
 
 describe('Process environment for tests', () => {

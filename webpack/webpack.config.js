@@ -1,15 +1,14 @@
-import _ from 'lodash-compat';
 import baseConfig, { options } from './base.config';
 
-export default _.extend({}, baseConfig, {
+export default Object.assign({}, baseConfig, {
   entry: {
-    'react-bootstrap': './src/index.js'
+    'start-kit': './src/index.js'
   },
 
   output: {
     path: './dist',
     filename: options.optimizeMinimize ? '[name].min.js' : '[name].js',
-    library: 'ReactBootstrap',
+    library: 'start-kit',
     libraryTarget: 'umd'
   },
 

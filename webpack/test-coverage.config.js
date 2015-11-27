@@ -1,4 +1,3 @@
-import _ from 'lodash-compat';
 import path from 'path';
 import { jsLoader } from './base.config';
 import testConfig from './test.config';
@@ -8,7 +7,7 @@ const paths = {
   TEST: path.resolve('test')
 };
 
-export default _.extend({}, testConfig, {
+export default Object.assign({}, testConfig, {
   module: {
     loaders: [
       {
