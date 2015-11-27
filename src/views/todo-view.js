@@ -1,9 +1,9 @@
 import Backbone from 'backbone';
 var itemTemplate = require('../templates/item.jade');
+import router from '../routers/router';
 
 const ENTER_KEY = 13;
 const ESC_KEY = 27;
-const TodoFilter = 'completed';
 
 // The DOM element for a todo item...
 var TodoView = Backbone.View.extend({
@@ -58,9 +58,10 @@ var TodoView = Backbone.View.extend({
 	},
 
 	isHidden: function () {
+    var todoFilter = router.getFilter();
 		return this.model.get('completed') ?
-			TodoFilter === 'active' :
-			TodoFilter === 'completed';
+			todoFilter === 'active' :
+			todoFilter === 'completed';
 	},
 
 	// Toggle the `"completed"` state of the model.

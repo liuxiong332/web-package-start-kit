@@ -2,6 +2,7 @@ import Backbone from 'backbone';
 import todos from '../models/todos';
 import TodoView from './todo-view';
 import _ from 'underscore';
+import router from '../routers/router';
 var statsTemplate = require('../templates/stats.jade');
 
 const ENTER_KEY = 13;
@@ -62,7 +63,7 @@ var AppView = Backbone.View.extend({
 
 			this.$('.filters li a')
 				.removeClass('selected')
-				.filter('[href="#/' + (TodoFilter || '') + '"]')
+				.filter('[href="#/' + (router.getFilter() || '') + '"]')
 				.addClass('selected');
 		} else {
 			this.$main.hide();

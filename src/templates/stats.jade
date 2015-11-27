@@ -1,13 +1,13 @@
 span(class="todo-count")
   strong= remaining 
-  = remaining === 1 ? 'item' : 'items'
-  = 'left'
-  ul(class="filters")
-    li
-      a(class="selected", href="#/") All
-    li
-      a(href="#/active") Active
-    li
-      a(href="#/completed") Completed
-  if (completed)
-    button(class="clear-completed") Clear completed
+  = remaining === 1 ? ' item' : ' items'
+  = ' left'
+ul(class="filters")
+  li
+    a(class="selected", href="#/") All
+  li
+    a(href="#/active") Active
+  li
+    a(href="#/completed") Completed
+if (completed)
+  button(class="clear-completed") Clear completed
