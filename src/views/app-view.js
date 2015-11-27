@@ -76,7 +76,6 @@ var AppView = Backbone.View.extend({
 	// Add a single todo item to the list by creating a view for it, and
 	// appending its element to the `<ul>`.
 	addOne: function (todo) {
-    console.log(todo);
 		var view = new TodoView({ model: todo });
 		this.$list.append(view.render().el);
 	},
