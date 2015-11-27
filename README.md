@@ -1,7 +1,11 @@
 # web-package-start-kit
 
-This repository is the start kit of web component package. The developer that want to
-develop the web package, can clone this repository and modify the source to satisfy the special requirement.
+This repository is the reimplementation of project [todomvc](http://todomvc.com/examples/backbone/).
+
+This demo project has the following characters:
+
+- Use the backbone framework
+- Use the `CMD` management pattern, to make the project clear and easy-understanding.
 
 ## Local Setup
 
@@ -10,8 +14,7 @@ develop the web package, can clone this repository and modify the source to sati
 - Run tests `gulp test`
 - Run tests in watch mode `gulp test-watch`
 
-## What inside
+## Local Run
 
-- Build the `ES6` js code to `ES5` code with `babel`, and move it to 'lib/' directory
-- Build the js code to the `UMD` type code with `webpack` that support `CMD` and `AMD` platform
-- Launch the test process in browser with `karma`
+Run command `gulp` in `examples/` directory, then the server will run in the local host.
+You can launch the browser and open the URL "http://localhost:8080/" to see what the web component looks like.
