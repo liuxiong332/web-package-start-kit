@@ -17,6 +17,7 @@ module.exports = {
     loaders: [
       { test: /\.js/, loader: 'babel?cacheDirectory', exclude: /node_modules/ },
       { test: /\.scss$/, loaders: ['style-loader', 'css-loader?modules&localIdentName=[name]__[local]___[hash:base64:5]', 'sass'] },
+      { test: /\.jade$/, loader: 'jade'}
     ]
   },
 

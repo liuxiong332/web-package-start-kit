@@ -1,6 +1,7 @@
 import Backbone from 'backbone';
 import todos from '../models/todos';
 import TodoView from './todo-view';
+import _ from 'underscore';
 var statsTemplate = require('../templates/stats.jade');
 
 // Our overall **AppView** is the top-level piece of UI.
@@ -28,7 +29,7 @@ var AppView = Backbone.View.extend({
 		this.$input = this.$('.new-todo');
 		this.$footer = this.$('.footer');
 		this.$main = this.$('.main');
-		this.$list = $('.todo-list');
+		this.$list = this.$('.todo-list');
 
 		this.listenTo(todos, 'add', this.addOne);
 		this.listenTo(todos, 'reset', this.addAll);

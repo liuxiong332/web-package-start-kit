@@ -1,5 +1,6 @@
 import Backbone from 'backbone';
 import Todo from './todo';
+Backbone.LocalStorage = require("backbone.localstorage");
 
 var Todos = Backbone.Collection.extend({
 		// Reference to this collection's model.
